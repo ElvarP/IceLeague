@@ -1,11 +1,25 @@
-## Hvağ er şetta?
+# IceLeague
 
-Şetta er kóğinn fyrir vefsíğuna http://iceleague.is
+KÃ³Ã°inn fyrir vefsÃ­Ã°una http://iceleague.is
 
-Şağ var ekki til nein góğ leiğ til ağ finna alla íslenska League Of Legends spilara şannig ég ákvağ ağ búa til şessa síğu.
+VefsÃ­Ã°an rankar Ã­slenska spilara sem skrÃ¡ sig meÃ° stats frÃ¡ riot api
 
-Şetta er fyrsta "alvöru" síğan sem ég hef gert (Líka í fyrsta skiptiğ sem ég hef unniğ meğ php fyrir utan ağ installa wordpress nokkrum sinnum) og fyrsta skipti sem ég hef unniğ meğ Github şannig ég vona ağ ég hafi gert allt rétt.
+## Getting Started
 
-Ef şú sérğ eitthvağ sem má betrumbæta (Sem şú munt eflaust gera) şá máttu endilega gera pull request!
+VerÃ°ur aÃ° vera meÃ° API key frÃ¡ Riot Games https://developer.riotgames.com/
 
-Síğan notar http://getbootstrap.com/, http://datatables.net og https://github.com/LeaguePHP/LeagueWrap
+Ã†tti aÃ° virka aÃ° downloada frÃ¡ githubbinu og setja upp Ã¶ll tables (iceleague_tables.sql) og auÃ°vitaÃ° breyta config.php
+
+## Built With
+
+* [Bootstrap](http://getbootstrap.com/) - Framework (theme frÃ¡ [Bootswatch](https://bootswatch.com/flatly/))
+* [DataTables](datatables) - Plugin fyrir tables (sorting, searching o.fl.)
+* [LeagueWrap](https://github.com/LeaguePHP/LeagueWrap) - League of legends API wrapper
+
+## Contributing
+
+Endilega gerÃ°u pull request Ã¾egar Ã¾Ãº sÃ©rÃ° eitthvaÃ° sem mÃ¡ laga eÃ°a betrumbÃ¦ta (sem Ã¾Ãº munnt eflaust gera!)
+
+## License
+
+This project is licensed under the GNU LESSER GENERAL PUBLIC LICENSE - see the [LICENSE.md](LICENSE.md) file for details

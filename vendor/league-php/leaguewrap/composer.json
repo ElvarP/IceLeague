@@ -1,0 +1,31 @@
+{
+    "name": "league-php/leaguewrap",
+    "type": "library",
+    "description": "A wrapper for the League of Legends API.",
+    "version": "0.7.2",
+    "keywords": ["League", "legends", "wrap", "api", "facade", "proxy"],
+    "homepage": "https://github.com/LeaguePHP/LeagueWrap",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gilles Paquette",
+            "email": "paquettg@gmail.com",
+            "homepage": "http://gillespaquette.ca"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "guzzlehttp/guzzle": "~6.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8.0",
+        "mockery/mockery": "~0.9.0"
+    },
+    "autoload": {
+        "psr-0": {
+        	"LeagueWrap": "src/"
+       	}
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

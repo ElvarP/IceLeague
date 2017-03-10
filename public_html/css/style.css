@@ -1,0 +1,71 @@
+/* Betra summoner_input design fyrir mobile */
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+	#summoner_input .input-group {
+		display: block;
+	}
+	#summoner_input button {
+		margin-top: 10px;
+	}
+}
+/* Jumbatron/hero/summoner_input styles */
+#hero {
+	background: url('../images/JinxBackground.jpg') no-repeat center center;
+	background-size: cover;
+	background-position: 0% 23%;
+	color: #fff;
+}
+.navbar {
+	margin-bottom: 0px;
+}
+.response {
+	height: 4em;
+	text-align: center;
+}
+/* Styles fyrir öll tables */
+.win {
+	color: #2daf7f;
+}
+.loss {
+	color: #e74c3c;
+}
+.kda_green {
+	color: #2daf7f;
+}
+.kda_blue {
+	color: #1f8ecd;
+}
+.kda_orange {
+	color: #e19205;
+}
+table.dataTable tbody td .progress {
+	margin-bottom: 0;
+	height: 16px;
+}
+table.dataTable tbody td .progress .progress-bar {
+	font-size: 15px;
+	line-height: 15px;
+}
+table.dataTable tbody td {
+  vertical-align: middle;
+}
+/* Keyframes fyrir spinning glyphicon í summoner_input */
+@keyframes spin {
+	from { transform: scale(1) rotate(0deg); }
+	to { transform: scale(1) rotate(360deg); }
+}
+.glyphicon.spinning {
+	animation: spin 1s infinite linear;
+}
+/* FAQ collapse takkar */
+.panel-heading [data-toggle="collapse"]:after {
+	font-family: 'Glyphicons Halflings';
+	content: "\25bc"; /* "play" icon */
+	float: right;
+	color: #F58723;
+	font-size: 18px;
+	line-height: 22px;
+}
+.panel-heading [data-toggle="collapse"].collapsed:after {
+	content: "\25b2";
+	color: #454444;
+}

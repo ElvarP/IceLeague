@@ -20,14 +20,14 @@ Verður að vera með API key frá Riot Games https://developer.riotgames.com/
 
 Ef þú sérð eitthvað sem má betrumbæta eða sem þarf að laga þá máttu endilega gerðu pull request.
 
-Nokkrar hugmyndir sem má hægt er að bæta við síðuna (at the top of my head)
+Nokkrar hugmyndir sem hægt er að bæta við síðuna (at the top of my head)
 
 + Listi yfir Íslenska streamara
 + Match history fyrir spilara
 + Detailed stats þegar maður klikkar á spilara
 + Safna fleiri stats um spilara (Akkurat nuna safnar síðan bara Ranked stats, League stats, og Champion Mastery Stats)
 + Safna upplýsingum um notendur í rauntíma í staðinn fyrir að nota cronjob á klukkutíma fresti
-+ Bæta við Cronjob Logs
++ Logga cronjob-ið
 
 Ástæðan afhverju ég er ekki buinn að bæta þessu við flestum af þessum hugmyndum er vegna þess að þá er síðan orðinn mjög svipuð öðrum síðun eins og [op.gg](https://op.gg/) og [lolking.net](https://lolking.net) sem var ekki tilgangurinn að síðunni.
 

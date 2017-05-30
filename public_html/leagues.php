@@ -1,29 +1,32 @@
-<?php
-if(isset($_GET['server'], $_GET["queue"])) {
-	$server = $_GET["server"];
-	$queue = $_GET["queue"];
-} else {
-	http_response_code(404);
-	include('404.php');
-	exit;
-}
-include 'header.php';
-?>
-
 <div class="container">
+
 	<?php
-	if (($queue == "ranked_solo_5x5") && ($server == "eune" || $server == "euw" || $server == "na")) {
-		echo "<h1 class='text-uppercase'>$server SOLO QUEUE</h1>";
-	}	elseif (($queue == "ranked_flex_sr") && ($server == "eune" || $server == "euw" || $server == "na")) {
-		echo "<h1 class='text-uppercase'>$server FLEX QUEUE</h1>";
-	}	elseif (($queue == "ranked_flex_tt") && ($server == "eune" || $server == "euw" || $server == "na")) {
-		echo "<h1 class='text-uppercase'>$server TWISTED TREELINE</h1>";
-	}	else {
-		echo "<h1 class='text-center'>Fyrirgefðu, við styðjum ekki þennan server eða þetta queue.<br><small>Vinsamlegast veldu aðra síðu fyrir ofan.</small></h1>";
-		include 'footer.php';
-		exit;
+	$server = $_GET['server'];
+	$queue = $_GET["queue"];
+
+	if (!empty($server) && (!empty($queue)) && ($server == "eune") || ($server == "euw") || ($server == "na")) {
+
+		if ($queue == "ranked_solo_5x5") {
+			$ranked_queue = "Solo Queue";
+		}
+		elseif ($queue == "ranked_flex_sr") {
+			$ranked_queue = "Flex Queue";
+		}
+		elseif ($queue == "ranked_flex_tt") {
+			$ranked_queue = "Twisted Treeline";
+		}
+		else {
+			include '404.php';
+		}
+
+		echo "<h1 class='text-uppercase'>$server $ranked_queue</h1>";
+
+	}
+	else {
+		include('404.php');
 	}
 	?>
+
 	<table class="leagues table table-bordered table-striped table-hover">
 		<thead>
 			<tr>
@@ -47,7 +50,7 @@ include 'header.php';
 				when leagues.tier = 'GOLD' then 5
 				when leagues.tier = 'SILVER' then 6
 				when leagues.tier = 'BRONZE' then 7
-				End,
+				End
 				leagues.tier ASC, leagues.division ASC, leagues.leaguePoints DESC");
 				$sth->execute(); ?>
 			</thead>

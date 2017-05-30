@@ -1,24 +1,15 @@
-<?php
-if(isset($_GET['server'])) {
-	$server = $_GET["server"];
-} else {
-	http_response_code(404);
-	include('404.php');
-	exit();
-}
-include 'header.php';
-?>
-
 <div class="container">
+
 	<?php
-	if (($server == "eune") || ($server == "euw") || ($server == "na")) {
+	$server = $_GET['server'];
+	if (!empty($server) && ($server == "eune") || ($server == "euw") || ($server == "na")) {
 		echo "<h1 class='text-uppercase'>$server Ranked Stats</h1>";
-	} else {
-		echo "<h1 class='text-center'>Fyrirgefðu, við styðjum ekki þennan server.<br><small>Vinsamlegast veldu aðra síðu fyrir ofan.</small></h1>";
-		include 'footer.php';
-		exit;
+	}
+	else {
+		include('404.php');
 	}
 	?>
+
 	<table class="rankedstats table table-bordered table-striped table-hover">
 		<thead>
 			<tr>
@@ -59,4 +50,3 @@ include 'header.php';
 				<?php } ?>
 			</table>
 		</div>
-		<?php include 'footer.php'; ?>

@@ -7,11 +7,13 @@
 		echo "<h1 class='text-uppercase'>$server Ranked Stats</h1>";
 	}
 	else {
-		include('404.php');
 		$showTable = False;
+		include('404.php');
 	}
-	?>
 
+
+	if ($showTable == True) {
+	?>
 	<table class="rankedstats table table-bordered table-striped table-hover">
 		<thead>
 			<tr>
@@ -30,8 +32,6 @@
 			</tr>
 		</thead>
 		<?php
-		if ($showTable = True) {
-
 			$sth = $pdo->prepare("
 			SELECT
 				id,

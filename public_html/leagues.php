@@ -16,19 +16,19 @@
 			$ranked_queue = "Twisted Treeline";
 		}
 		else {
-			include('404.php');
 			$showTable = False;
+			include('404.php');
 		}
-
 		echo "<h1 class='text-uppercase'>$server $ranked_queue</h1>";
-
 	}
 	else {
-		include('404.php');
 		$showTable = False;
+		include('404.php');
 	}
-	?>
 
+
+	if ($showTable = True) {
+	?>
 	<table class="leagues table table-bordered table-striped table-hover">
 		<thead>
 			<tr>
@@ -43,7 +43,6 @@
 			</tr>
 		</thead>
 		<?php
-		if ($showTable = True) {
 			$sth = $pdo->prepare("
 			SELECT
 				league.playerOrTeamId,

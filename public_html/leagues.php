@@ -1,9 +1,9 @@
 <div class="container">
 
 	<?php
+	$showTable = True;
 	$server = $_GET['server'];
 	$queue = $_GET["queue"];
-
 	if (!empty($server) && (!empty($queue)) && ($server == "eune") || ($server == "euw") || ($server == "na")) {
 
 		if ($queue == "ranked_solo_5x5") {
@@ -16,7 +16,8 @@
 			$ranked_queue = "Twisted Treeline";
 		}
 		else {
-			include '404.php';
+			include('404.php');
+			$showTable = False;
 		}
 
 		echo "<h1 class='text-uppercase'>$server $ranked_queue</h1>";
@@ -24,6 +25,7 @@
 	}
 	else {
 		include('404.php');
+		$showTable = False;
 	}
 	?>
 
@@ -39,22 +41,42 @@
 				<th>Win %</th>
 				<th>Most Played Champions</th>
 			</tr>
-			<?php $sth = $pdo->prepare("SELECT leagues.playerOrTeamId, leagues.playerOrTeamName, leagues.tier, leagues.division, leagues.leaguePoints, leagues.wins, leagues.losses,
-				champions.id, champions.championName1, champions.championName2, champions.championName3, ROUND(100 * leagues.wins / (leagues.wins + leagues.losses)) as 'winPercentage'
-				FROM {$server}_{$queue} leagues INNER JOIN {$server}_most_played_champions champions ON leagues.playerOrTeamId = champions.id
-				order by case
-				when leagues.tier = 'CHALLENGER' then 1
-				when leagues.tier = 'MASTER' then 2
-				when leagues.tier = 'DIAMOND' then 3
-				when leagues.tier = 'PLATINUM' then 4
-				when leagues.tier = 'GOLD' then 5
-				when leagues.tier = 'SILVER' then 6
-				when leagues.tier = 'BRONZE' then 7
+		</thead>
+		<?php
+		if ($showTable = True) {
+			$sth = $pdo->prepare("
+			SELECT
+				league.playerOrTeamId,
+				league.playerOrTeamName,
+				league.tier,
+				league.division,
+				league.leaguePoints,
+				league.wins,
+				league.losses,
+				champion.id,
+				champion.championName1,
+				champion.championName2,
+				champion.championName3,
+				ROUND(100 * league.wins / (league.wins + league.losses)) as 'winPercentage'
+			FROM
+				{$server}_{$queue} league
+			INNER JOIN
+				{$server}_most_played_champions champion ON league.playerOrTeamId = champion.id
+			ORDER BY CASE
+				when league.tier = 'CHALLENGER' then 1
+				when league.tier = 'MASTER' then 2
+				when league.tier = 'DIAMOND' then 3
+				when league.tier = 'PLATINUM' then 4
+				when league.tier = 'GOLD' then 5
+				when league.tier = 'SILVER' then 6
+				when league.tier = 'BRONZE' then 7
 				End,
-				leagues.tier ASC, leagues.division ASC, leagues.leaguePoints DESC");
-				$sth->execute(); ?>
-			</thead>
-			<?php $rank = 0; while($row = $sth->fetch()) { ?>
+				league.tier ASC, league.division ASC, league.leaguePoints DESC");
+			$sth->execute();
+
+			$rank = 0;
+			while($row = $sth->fetch()) {
+				?>
 				<tr>
 					<td><?php echo $rank += 1; ?></td>
 					<td><a href="http://<?php echo $server ?>.op.gg/summoner/userName=<?php echo $row['playerOrTeamName']; ?>"><?php echo $row['playerOrTeamName']; ?></a></td>
@@ -69,7 +91,9 @@
 						<img src="http://ddragon.leagueoflegends.com/cdn/7.4.3/img/champion/<?php echo $row['championName3']; ?>.png" alt="<?php echo $row['championName3']; ?>" height="30" width="30">
 					</td>
 				</tr>
-				<?php } ?>
-			</table>
-		</div>
-		<?php include 'footer.php'; ?>
+				<?php
+			}
+		}
+		?>
+	</table>
+</div>

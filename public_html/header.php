@@ -70,7 +70,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="faq.php">FAQ</a>
+						<a href="index.php?sida=faq">FAQ</a>
 					</li>
 				</ul>
 			</div>

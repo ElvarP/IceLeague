@@ -1,10 +1,24 @@
 <?php require_once 'header.php'; ?>
 
 <?php
-$page = isset($_GET['page'])
-   ? preg_replace("/\W+/", "", $_GET['page'])
-   : "home";
- include "$page.php";
+
+$page = $_GET['sida'];
+$allowed_pages = array('champion_mastery', 'leagues', 'ranked_stats');
+
+if (!empty($page)) {
+
+	if(in_array($page, $allowed_pages)) {
+		$page .= '.php';
+		include $page;
+	}
+	else {
+		include '404.php';
+	}
+
+}
+else {
+	include('home.php');
+}
 ?>
 
 <?php require_once 'footer.php'; ?>

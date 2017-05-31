@@ -1,12 +1,14 @@
 <div class="container">
 
 	<?php
+	$showTable = True;
 	$server = $_GET['server'];
 	if (!empty($server) && ($server == "eune") || ($server == "euw") || ($server == "na")) {
 		echo "<h1 class='text-uppercase'>$server Ranked Stats</h1>";
 	}
 	else {
 		include('404.php');
+		$showTable = False;
 	}
 	?>
 
@@ -26,13 +28,33 @@
 				<th>DMG Taken</th>
 				<th>Penta Kills</th>
 			</tr>
-			<?php
-			$sth = $pdo->prepare("SELECT id, summonerName, totalSessionsPlayed, totalSessionsLost, totalSessionsWon, totalChampionKills, totalAssists, totalDeathsPerSession, totalDamageDealt,	totalDamageTaken,
-				totalMinionKills, totalPentaKills,	ROUND(100 * totalSessionsWon / totalSessionsPlayed) as 'winPercentage',	ROUND((totalChampionKills +  totalAssists) / totalDeathsPerSession, 2) as 'kda'
-				FROM {$server}_ranked_stats order by winPercentage DESC");
-				$sth->execute(); ?>
-			</thead>
-			<?php while($row = $sth->fetch()) { ?>
+		</thead>
+		<?php
+		if ($showTable = True) {
+
+			$sth = $pdo->prepare("
+			SELECT
+				id,
+				summonerName,
+				totalSessionsPlayed,
+				totalSessionsLost,
+				totalSessionsWon,
+				totalChampionKills,
+				totalAssists,
+				totalDeathsPerSession,
+				totalDamageDealt,	totalDamageTaken,
+				totalMinionKills,
+				totalPentaKills,
+				ROUND((totalChampionKills +  totalAssists) / totalDeathsPerSession, 2) as 'kda',
+				ROUND(100 * totalSessionsWon / totalSessionsPlayed) as 'winPercentage'
+			FROM
+				{$server}_ranked_stats
+			order by
+				winPercentage DESC");
+			$sth->execute();
+
+			while($row = $sth->fetch()) {
+				?>
 				<tr>
 					<td></td>
 					<td><a href="http://<?php echo $server ?>.op.gg/summoner/userName=<?php echo $row['summonerName']; ?>"><?php echo $row['summonerName']; ?></a></td>
@@ -47,6 +69,9 @@
 					<td><?php echo $row['totalDamageTaken']; ?></td>
 					<td><?php echo $row['totalPentaKills'] ?></td>
 				</tr>
-				<?php } ?>
-			</table>
-		</div>
+				<?php
+			}
+		}
+		?>
+	</table>
+</div>

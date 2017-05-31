@@ -2,7 +2,7 @@
 
 <?php
 
-$page = $_GET['sida'];
+$page = isset($_GET['sida']) ? $_GET['sida'] : null;
 $allowed_pages = array('champion_mastery', 'leagues', 'ranked_stats', 'faq');
 
 if (!empty($page)) {

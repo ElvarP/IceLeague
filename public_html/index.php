@@ -3,7 +3,7 @@
 <?php
 
 $page = $_GET['sida'];
-$allowed_pages = array('champion_mastery', 'leagues', 'ranked_stats');
+$allowed_pages = array('champion_mastery', 'leagues', 'ranked_stats', 'faq');
 
 if (!empty($page)) {
 

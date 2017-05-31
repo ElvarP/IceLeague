@@ -1,9 +1,6 @@
-<?php include 'header.php'; ?>
-
 <div class="container">
-  <h3>Algengar spurningar</h3>
+  <h1>Algengar spurningar</h1>
   <div class="panel-group" id="accordion">
-
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -48,7 +45,7 @@
       </div>
       <div id="collapse6" class="panel-collapse collapse">
         <div class="panel-body">
-          <p>Ég heiti Elvar Pétur gaman að kynnast þér :), Nafnið mitt í League er Álfasteinn á EUNE</p>
+          <p>Ég heiti Elvar, Nafnið mitt í League of Legends er Álfasteinn á EUNE</p>
         </div>
       </div>
     </div>
@@ -84,12 +81,7 @@
       </div>
       <div id="collapse9" class="panel-collapse collapse">
         <div class="panel-body">
-          <p>Já, ef þú vilt það!</p>
-          <br>
-          <br>
-          <p>Allur peningur fer í að halda síðunni uppi og til þess að bæta við nýjum eiginleikum (þú getur t.d. sagt mér í donate message hvaða eiginlega þér langar ég bæti við síðuna!)</p>
-          <br>
-          <br>
+          <p>Já! Allur peningur fer í að halda síðunni uppi og til þess að bæta við nýjum eiginleikum (þú getur t.d. sagt mér í donate message hvaða þér langar að ég bæti við síðuna!)</p>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="57FNNRN9LTFZE">
@@ -107,14 +99,12 @@
       </div>
       <div id="collapse10" class="panel-collapse collapse">
         <div class="panel-body">
-          IceLeague er ekki styrkt af Riot Games og endurspeglar ekki skoðanir hjá Riot Games eða einhvern sem opinberlega tekur þátt í að framleiða League Of Legends.</p>
-          <br>
-          League of Legends og Riot Games er skrásett vörumerki hjá Riot Games, Inc. League of legends © Riot Games, Inc.</p>
+          <p>
+            IceLeague er ekki styrkt af Riot Games og endurspeglar ekki skoðanir hjá Riot Games eða einhvern sem opinberlega tekur þátt í að framleiða League Of Legends.</p>
+            League of Legends og Riot Games er skrásett vörumerki hjá Riot Games, Inc. League of legends © Riot Games, Inc.
+          </p>
         </div>
       </div>
     </div>
-
   </div>
 </div>
-
-<?php include 'footer.php'; ?>

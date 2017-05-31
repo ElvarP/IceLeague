@@ -37,34 +37,34 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NA <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="leagues.php?server=na&queue=ranked_solo_5x5">SOLO Q</a></li>
-							<li><a href="leagues.php?server=na&queue=ranked_flex_sr">FLEX Q</a></li>
-							<li><a href="leagues.php?server=na&queue=ranked_flex_tt">Twisted Treeline</a></li>
+							<li><a href="index.php?sida=leagues&server=na&queue=ranked_solo_5x5">SOLO</a></li>
+							<li><a href="index.php?sida=leagues&server=na&queue=ranked_flex_sr">FLEX</a></li>
+							<li><a href="index.php?sida=leagues&server=na&queue=ranked_flex_tt">Twisted Treeline</a></li>
 							<li class="divider"></li>
-							<li><a href="ranked_stats.php?server=na">Ranked Stats</a></li>
-							<li><a href="champion_mastery.php?server=na">Champion Mastery</a></li>
+							<li><a href="index.php?sida=ranked_stats&server=na">Ranked Stats</a></li>
+							<li><a href="index.php?sida=champion_mastery&server=na">Champion Mastery</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">EU WEST <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="leagues.php?server=euw&queue=ranked_solo_5x5">SOLO Q</a></li>
-							<li><a href="leagues.php?server=euw&queue=ranked_flex_sr">FLEX Q</a></li>
-							<li><a href="leagues.php?server=euw&queue=ranked_flex_tt">Twisted Treeline</a></li>
+							<li><a href="index.php?sida=leagues&server=euw&queue=ranked_solo_5x5">SOLO</a></li>
+							<li><a href="index.php?sida=leagues&server=euw&queue=ranked_flex_sr">FLEX</a></li>
+							<li><a href="index.php?sida=leagues&server=euw&queue=ranked_flex_tt">Twisted Treeline</a></li>
 							<li class="divider"></li>
-							<li><a href="ranked_stats.php?server=euw">Ranked Stats</a></li>
-							<li><a href="champion_mastery.php?server=euw">Champion Mastery</a></li>
+							<li><a href="index.php?sida=ranked_stats&server=euw">Ranked Stats</a></li>
+							<li><a href="index.php?sida=champion_mastery&server=euw">Champion Mastery</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">EU NORDIC & EAST <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="leagues.php?server=eune&queue=ranked_solo_5x5">SOLO Q</a></li>
-							<li><a href="leagues.php?server=eune&queue=ranked_flex_sr">FLEX Q</a></li>
-							<li><a href="leagues.php?server=eune&queue=ranked_flex_tt">Twisted Treeline</a></li>
+							<li><a href="index.php?sida=leagues&server=eune&queue=ranked_solo_5x5">SOLO</a></li>
+							<li><a href="index.php?sida=leagues&server=eune&queue=ranked_flex_sr">FLEX</a></li>
+							<li><a href="index.php?sida=leagues&server=eune&queue=ranked_flex_tt">Twisted Treeline</a></li>
 							<li class="divider"></li>
-							<li><a href="ranked_stats.php?server=eune">Ranked Stats</a></li>
-							<li><a href="champion_mastery.php?server=eune">Champion Mastery</a></li>
+							<li><a href="index.php?sida=ranked_stats&server=eune">Ranked Stats</a></li>
+							<li><a href="index.php?sida=champion_mastery&server=eune">Champion Mastery</a></li>
 						</ul>
 					</li>
 				</ul>

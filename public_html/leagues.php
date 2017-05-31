@@ -50,7 +50,7 @@
 				when leagues.tier = 'GOLD' then 5
 				when leagues.tier = 'SILVER' then 6
 				when leagues.tier = 'BRONZE' then 7
-				End
+				End,
 				leagues.tier ASC, leagues.division ASC, leagues.leaguePoints DESC");
 				$sth->execute(); ?>
 			</thead>

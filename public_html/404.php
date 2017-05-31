@@ -7,4 +7,3 @@
       <a href="index.php" class="btn btn-large btn-primary">Forsíða <span class="glyphicon glyphicon glyphicon-home"></span></a>
   </div>
 </div>
-<?php exit; ?>

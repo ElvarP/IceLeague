@@ -1,7 +1,9 @@
-<?php require_once '../vendor/autoload.php'; ?>
-<?php require_once 'header.php'; ?>
-
 <?php
+require_once '../config.php';
+require_once '../vendor/autoload.php';
+require_once 'header.php';
+
+
 
 $page = isset($_GET['sida']) ? $_GET['sida'] : null;
 $allowed_pages = array('champion_mastery', 'leagues', 'ranked_stats', 'faq');
@@ -20,6 +22,6 @@ if (!empty($page)) {
 else {
 	include('home.php');
 }
-?>
 
-<?php require_once 'footer.php'; ?>
+
+require_once 'footer.php';

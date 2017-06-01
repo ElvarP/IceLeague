@@ -1,4 +1,5 @@
 <?php
+require_once '../config.php';
 require_once '../vendor/autoload.php';
 use LeagueWrap\Api;
 $server = $_POST['server'];

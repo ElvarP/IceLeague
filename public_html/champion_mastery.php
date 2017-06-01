@@ -52,9 +52,9 @@
 					<td><a href="http://<?php echo $server ?>.op.gg/summoner/userName=<?php echo $row['summonerName']; ?>"><?php echo $row['summonerName']; ?></a></td>
 					<td><?php echo $row['totalMasteryPoints']; ?></td>
 					<td>
-						<img src="http://ddragon.leagueoflegends.com/cdn/7.4.3/img/champion/<?php echo $row['championName1']; ?>.png" alt="<?php echo $row['championName1']; ?>" heigh="30px" width="30px">
-						<img src="http://ddragon.leagueoflegends.com/cdn/7.4.3/img/champion/<?php echo $row['championName3']; ?>.png" alt="<?php echo $row['championName2']; ?>" heigh="30px" width="30px">
-						<img src="http://ddragon.leagueoflegends.com/cdn/7.4.3/img/champion/<?php echo $row['championName2']; ?>.png" alt="<?php echo $row['championName3']; ?>" heigh="30px" width="30px">
+						<img src="http://ddragon.leagueoflegends.com/cdn/<?php echo $data_dragon_version; ?>/img/champion/<?php echo $row['championName1']; ?>.png" alt="<?php echo $row['championName1']; ?>" height="30">
+						<img src="http://ddragon.leagueoflegends.com/cdn/<?php echo $data_dragon_version; ?>/img/champion/<?php echo $row['championName2']; ?>.png" alt="<?php echo $row['championName2']; ?>" height="30">
+						<img src="http://ddragon.leagueoflegends.com/cdn/<?php echo $data_dragon_version; ?>/img/champion/<?php echo $row['championName3']; ?>.png" alt="<?php echo $row['championName3']; ?>" height="30">
 					</td>
 					<td><?php echo $row['championPoints1']; ?></td>
 					<td><?php echo $row['championPoints2']; ?></td>

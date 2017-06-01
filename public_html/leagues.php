@@ -72,9 +72,9 @@
 					<td class="loss"><?php echo $row['losses']; ?></td>
 					<td><div class="progress"><div class="progress-bar progress-bar-info win_percentage" style="width: <?php echo $row['winPercentage'] ?>%"><?php echo $row['winPercentage'] ?>%</div></div></td>
 					<td>
-						<img src="http://ddragon.leagueoflegends.com/cdn/7.4.3/img/champion/<?php echo $row['championName1']; ?>.png" alt="<?php echo $row['championName1']; ?>" height="30" width="30">
-						<img src="http://ddragon.leagueoflegends.com/cdn/7.4.3/img/champion/<?php echo $row['championName2']; ?>.png" alt="<?php echo $row['championName2']; ?>" height="30" width="30">
-						<img src="http://ddragon.leagueoflegends.com/cdn/7.4.3/img/champion/<?php echo $row['championName3']; ?>.png" alt="<?php echo $row['championName3']; ?>" height="30" width="30">
+						<img src="http://ddragon.leagueoflegends.com/cdn/<?php echo $data_dragon_version; ?>/img/champion/<?php echo $row['championName1']; ?>.png" alt="<?php echo $row['championName1']; ?>" height="30">
+						<img src="http://ddragon.leagueoflegends.com/cdn/<?php echo $data_dragon_version; ?>/img/champion/<?php echo $row['championName2']; ?>.png" alt="<?php echo $row['championName2']; ?>" height="30">
+						<img src="http://ddragon.leagueoflegends.com/cdn/<?php echo $data_dragon_version; ?>/img/champion/<?php echo $row['championName3']; ?>.png" alt="<?php echo $row['championName3']; ?>" height="30">
 					</td>
 				</tr>
 				<?php

@@ -1,18 +1,19 @@
 <div class="container">
 
 	<?php
-	$showTable = True;
 	$server = $_GET['server'];
-	if (!empty($server) && ($server == "eune") || ($server == "euw") || ($server == "na")) {
-		echo "<h1 class='text-uppercase'>$server Ranked Stats</h1>";
+	if (in_array($server, $supported_league_servers)) {
+
+		$showTable = True;
+		echo "<h1 class='text-uppercase'>$server champion mastery</h1>";
+
 	}
 	else {
 		$showTable = False;
 		include('404.php');
 	}
 
-
-	if ($showTable = True) {
+	if ($showTable == True) {
 	?>
 	<table class="championmastery table table-bordered table-striped table-hover">
 		<thead>

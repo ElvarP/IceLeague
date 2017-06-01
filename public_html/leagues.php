@@ -1,33 +1,20 @@
 <div class="container">
 
 	<?php
-	$showTable = True;
 	$server = $_GET['server'];
-	$queue = $_GET["queue"];
-	if (!empty($server) && (!empty($queue)) && ($server == "eune") || ($server == "euw") || ($server == "na")) {
+	$queue = $_GET['queue'];
+	if (in_array($server, $supported_league_servers) && (in_array($queue, $supported_ranked_queues))) {
 
-		if ($queue == "ranked_solo_5x5") {
-			$ranked_queue = "Solo Queue";
-		}
-		elseif ($queue == "ranked_flex_sr") {
-			$ranked_queue = "Flex Queue";
-		}
-		elseif ($queue == "ranked_flex_tt") {
-			$ranked_queue = "Twisted Treeline";
-		}
-		else {
-			$showTable = False;
-			include('404.php');
-		}
-		echo "<h1 class='text-uppercase'>$server $ranked_queue</h1>";
+		$showTable = True;
+		echo "<h1 class='text-uppercase'>$server $queue</h1>";
+
 	}
 	else {
 		$showTable = False;
 		include('404.php');
 	}
 
-
-	if ($showTable = True) {
+	if ($showTable == True) {
 	?>
 	<table class="leagues table table-bordered table-striped table-hover">
 		<thead>

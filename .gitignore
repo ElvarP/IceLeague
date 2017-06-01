@@ -1,5 +1,7 @@
-
+composer.phar
+/vendor/
 config.php
+.htaccess
 
 # Created by https://www.gitignore.io/api/windows
 

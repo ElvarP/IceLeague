@@ -2,40 +2,39 @@
 
 IceLeague er vefsíða sem sýnir upplýsingar um Íslenska League of Legends spilara með gögnum í gegnum forritunarviðmótið (API) hjá Riot Games.
 
-Link á síðu: http://iceleague.is
+Linkur á síðu: http://iceleague.is
 
-## Getting Started
+## Setja upp
 
-Verður að vera með API key frá Riot Games https://developer.riotgames.com/
+Verður að vera með [Composer](https://getcomposer.org/) og API lykil frá [Riot Games](https://developer.riotgames.com/)
 
-Ætti að virka að downloada frá githubbinu og setja upp öll tables (iceleague_tables.sql) og auðvitað breyta config.php
+```
+$ composer install
+```
 
-## Built With
+Síðan verður þú að breyta öllum stillingum í config-sample.php og endurnefna skrána í config.php
 
-* [Bootstrap](https://getbootstrap.com/) - Framework (theme frá [Bootswatch](https://bootswatch.com/flatly/))
-* [DataTables](datatables) - jQuery plugin fyrir tables (sorting, searching o.fl.)
+Last but not least, þá þarf að setja upp gagnagrunninn með iceleague_tables.sql
+
+## Tækni notuð
+
 * [LeagueWrap](https://github.com/LeaguePHP/LeagueWrap) - League of legends API wrapper
+* [DataTables](datatables) - jQuery plugin fyrir tables (sorting, searching o.fl.)
+* [Bootstrap](https://getbootstrap.com/) - CSS Framework
+* [Bootswatch flatly](https://bootswatch.com/flatly/) - Bootstrap Theme
 
-## Contributing
+## Má gera pull requests?
 
-Ef þú sérð eitthvað sem má betrumbæta eða sem þarf að laga þá máttu endilega gerðu pull request.
+Já, endilega! Go wild.
 
-Nokkrar hugmyndir sem hægt er að bæta við síðuna (at the top of my head)
 
-+ Listi yfir Íslenska streamara
-+ Match history fyrir spilara
-+ Detailed stats þegar maður klikkar á spilara
-+ Safna fleiri stats um spilara (Akkurat nuna safnar síðan bara Ranked stats, League stats, og Champion Mastery Stats)
-+ Safna upplýsingum um notendur í rauntíma í staðinn fyrir að nota cronjob á klukkutíma fresti
-+ Logga cronjob-ið
+## Þekktir gallar
 
-Ástæðan afhverju ég er ekki buinn að bæta þessu við flestum af þessum hugmyndum er vegna þess að þá er síðan orðinn mjög svipuð öðrum síðun eins og [op.gg](https://op.gg/) og [lolking.net](https://lolking.net) sem var ekki tilgangurinn að síðunni.
+ * Allir myndir af nýjum hetjum eftir patch 7.10.1 virka ekki útaf ég notaði breytu fyrir version number fyrir Data Dragon.
 
-## Known bugs
+Ekkert annað sem ég veit af í augnablikinu.
 
-Ekkert sem ég veit af í augnablikinu.
-
-## License
+## Leyfi
 
 MIT License
 

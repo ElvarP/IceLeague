@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `eune_champion_mastery` (
   `id` int(11) NOT NULL,
-  `summonerName` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId1` int(11) DEFAULT NULL,
   `championPoints1` int(11) NOT NULL,
   `championName1` text NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE `eune_champion_mastery` (
 
 CREATE TABLE `eune_most_played_champions` (
   `id` int(11) NOT NULL,
-  `summonerName` text COLLATE utf8_unicode_ci NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId1` int(11) NOT NULL,
   `championName1` text COLLATE utf8_unicode_ci NOT NULL,
   `championId2` int(11) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE `eune_ranked_flex_sr` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE `eune_ranked_flex_tt` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -104,7 +104,7 @@ CREATE TABLE `eune_ranked_solo_5x5` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE `eune_ranked_solo_5x5` (
 
 CREATE TABLE `eune_ranked_stats` (
   `id` int(11) NOT NULL,
-  `summonerName` text NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId` int(11) NOT NULL,
   `totalSessionsPlayed` int(11) NOT NULL,
   `totalSessionsLost` int(11) NOT NULL,
@@ -154,7 +154,7 @@ CREATE TABLE `eune_ranked_stats` (
 
 CREATE TABLE `eune_summoners` (
   `id` int(11) NOT NULL,
-  `summonerName` text NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `profileIconId` int(11) NOT NULL,
   `summonerLevel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -167,7 +167,7 @@ CREATE TABLE `eune_summoners` (
 
 CREATE TABLE `euw_champion_mastery` (
   `id` int(11) NOT NULL,
-  `summonerName` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId1` int(11) DEFAULT NULL,
   `championPoints1` int(11) NOT NULL,
   `championName1` text NOT NULL,
@@ -187,7 +187,7 @@ CREATE TABLE `euw_champion_mastery` (
 
 CREATE TABLE `euw_most_played_champions` (
   `id` int(11) NOT NULL,
-  `summonerName` text COLLATE utf8_unicode_ci NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId1` int(11) NOT NULL,
   `championName1` text COLLATE utf8_unicode_ci NOT NULL,
   `championId2` int(11) NOT NULL,
@@ -207,7 +207,7 @@ CREATE TABLE `euw_ranked_flex_sr` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -225,7 +225,7 @@ CREATE TABLE `euw_ranked_flex_tt` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -243,7 +243,7 @@ CREATE TABLE `euw_ranked_solo_5x5` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -258,7 +258,7 @@ CREATE TABLE `euw_ranked_solo_5x5` (
 
 CREATE TABLE `euw_ranked_stats` (
   `id` int(11) NOT NULL,
-  `summonerName` text NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId` int(11) NOT NULL,
   `totalSessionsPlayed` int(11) NOT NULL,
   `totalSessionsLost` int(11) NOT NULL,
@@ -293,7 +293,7 @@ CREATE TABLE `euw_ranked_stats` (
 
 CREATE TABLE `euw_summoners` (
   `id` int(11) NOT NULL,
-  `summonerName` text NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `profileIconId` int(11) NOT NULL,
   `summonerLevel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -306,7 +306,7 @@ CREATE TABLE `euw_summoners` (
 
 CREATE TABLE `na_champion_mastery` (
   `id` int(11) NOT NULL,
-  `summonerName` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId1` int(11) DEFAULT NULL,
   `championPoints1` int(11) NOT NULL,
   `championName1` text NOT NULL,
@@ -326,7 +326,7 @@ CREATE TABLE `na_champion_mastery` (
 
 CREATE TABLE `na_most_played_champions` (
   `id` int(11) NOT NULL,
-  `summonerName` text COLLATE utf8_unicode_ci NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId1` int(11) NOT NULL,
   `championName1` text COLLATE utf8_unicode_ci NOT NULL,
   `championId2` int(11) NOT NULL,
@@ -346,7 +346,7 @@ CREATE TABLE `na_ranked_flex_sr` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -364,7 +364,7 @@ CREATE TABLE `na_ranked_flex_tt` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -382,7 +382,7 @@ CREATE TABLE `na_ranked_solo_5x5` (
   `tier` mediumtext NOT NULL,
   `queue` mediumtext NOT NULL,
   `playerOrTeamId` int(11) NOT NULL,
-  `playerOrTeamName` mediumtext NOT NULL,
+  `playerOrTeamName` VARCHAR(16) NOT NULL,
   `division` mediumtext NOT NULL,
   `leaguePoints` int(11) NOT NULL,
   `wins` int(11) NOT NULL,
@@ -397,7 +397,7 @@ CREATE TABLE `na_ranked_solo_5x5` (
 
 CREATE TABLE `na_ranked_stats` (
   `id` int(11) NOT NULL,
-  `summonerName` text NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `championId` int(11) NOT NULL,
   `totalSessionsPlayed` int(11) NOT NULL,
   `totalSessionsLost` int(11) NOT NULL,
@@ -432,7 +432,7 @@ CREATE TABLE `na_ranked_stats` (
 
 CREATE TABLE `na_summoners` (
   `id` int(11) NOT NULL,
-  `summonerName` text NOT NULL,
+  `summonerName` VARCHAR(16) NOT NULL,
   `profileIconId` int(11) NOT NULL,
   `summonerLevel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

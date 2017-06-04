@@ -2,8 +2,8 @@
 -- Database: `iceleague`
 --
 
-CREATE DATABASE IF NOT EXISTS iceleague_new CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE iceleague_new;
+CREATE DATABASE IF NOT EXISTS iceleague CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE iceleague;
 
 
 -- --------------------------------------------------------

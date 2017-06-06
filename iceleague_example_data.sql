@@ -1,5 +1,5 @@
 
--- Þetta eru öll gögnin af iceleague.is sem ég safnaði, ég veit að þetta er ekki mjög vel sett upp
+-- Þetta eru öll gögnin sem ég er með af iceleague.is, ég veit að þetta er ekki mjög vel sett upp gögn en þú getur kannski notað þetta í eitthvað kúl.
 
 -- MySQL dump 10.13  Distrib 5.7.17, for Linux (x86_64)
 -- Dumping data for table `eune_champion_mastery`

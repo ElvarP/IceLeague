@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 require_once 'vendor/autoload.php';
 
 set_time_limit(0); // Ekkert time limit svo það er hægt að uppfæra alla summoners

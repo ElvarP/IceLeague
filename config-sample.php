@@ -15,7 +15,7 @@ $supported_ranked_queues = ['ranked_solo_5x5', 'ranked_flex_sr', 'ranked_flex_tt
 ##    Example: http://ddragon.leagueoflegends.com/cdn/7.10.1/img/champion/Ahri.png
 ## Þetta er placeholder fix þangað til að annað kerfi verður notað til þess að sýna myndir af hetjum (nota static data API fyrir version numer t.d.)
 ## Í augnblikinu þarf að uppfæra þessa tölu í ef það kemur League of Legends patch með nýrri hetju
-$data_dragon_version = '7.10.1';
+$data_dragon_version = '7.13.1';
 
 
 

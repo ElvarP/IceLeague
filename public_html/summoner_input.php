@@ -1,16 +1,23 @@
 <?php
 require_once '../config.php';
 require_once '../vendor/autoload.php';
+
+
 use LeagueWrap\Api;
 $server = $_POST['server'];
 $summonerName = $_POST['summoner'];
+$summonerName = mb_strtolower($summonerName);
 $api = new Api($key); // Load up the API
 $api->setRegion($server); //Setja region sem það sem notandinn valdi (na, euw eða {$server})
+$api->attachStaticData();                        // Tell the api to attach all static data
+
 
 try {
   $championsStaticData = $api->staticData()->getChampions();
 } catch (LeagueWrap\Response\Http404 $e) {
   echo "<div class='alert alert-danger'>Fyrirgefðu! Það er eitthvað bilað hjá Riot Games, vinsamlegast prufaðu aftur seinna</div>", exit;
+} catch (LeagueWrap\Response\Http403 $e) {
+  echo "forbidden champion data", exit;
 } catch (LeagueWrap\Response\UnderlyingServiceRateLimitReached $e) {
   echo "<div class='alert alert-danger'>Fyrirgefðu! það eru of margir að nota síðuna í augnablikinu, vinsamlegast prufaðu aftur seinna</div>", exit;
 }
@@ -18,7 +25,9 @@ try {
   $summoner = $api->summoner()->info($summonerName);
 } catch (LeagueWrap\Response\Http404 $e) {
   echo "<div class='alert alert-danger'>Þessi summoner fannst ekki: <b>$summonerName</b>, vinsamlegast athugaðu hvort þú valdir réttan server</div>", exit;
-} catch (LeagueWrap\Response\UnderlyingServiceRateLimitReached $e) {
+} catch (LeagueWrap\Response\Http403 $e) {
+  echo "forbidden", exit;
+}  catch (LeagueWrap\Response\UnderlyingServiceRateLimitReached $e) {
   echo "<div class='alert alert-danger'>Fyrirgefðu! það eru of margir að nota síðuna í augnablikinu, vinsamlegast prufaðu aftur seinna</div>", exit;
 }
 try {
@@ -73,22 +82,22 @@ elseif ($masteryPageFound == True) {
   #Finna champion mastery stats hjá notanda, setja það í gagnagrunninn - Ef ekkert fannst þá fáum við 404 error
   try {
     $masteryList = $api->championMastery()->topChampions($summoner, 3);
-    $champion1 = $championsStaticData->getChampion($masteryList[0]->championId);
-    $champion2 = $championsStaticData->getChampion($masteryList[1]->championId);
-    $champion3 = $championsStaticData->getChampion($masteryList[2]->championId);
+    $champion1 = $api->champion()->championById($masteryList[0]->championId);
+    $champion2 = $api->champion()->championById($masteryList[1]->championId);
+    $champion3 = $api->champion()->championById($masteryList[2]->championId);
 
     $sth = $pdo->prepare("REPLACE INTO {$server}_champion_mastery (id, summonerName, championId1, championName1, championPoints1, championId2, championName2, championPoints2, championId3, championName3, championPoints3)
     VALUES(:id, :summonerName, :championId1, :championName1, :championPoints1, :championId2, :championName2, :championPoints2, :championId3, :championName3, :championPoints3)");
     $sth->bindValue(":id", $summoner->id);
     $sth->bindValue(":summonerName", $summoner->name);
-    $sth->bindValue(":championId1", $masteryList[0]->championId);
-    $sth->bindValue(":championName1", $champion1->key);
+    $sth->bindValue(":championId1", $champion1->championStaticData->id);
+    $sth->bindValue(":championName1", $champion1->championStaticData->key);
     $sth->bindValue(":championPoints1", $masteryList[0]->championPoints);
-    $sth->bindValue(":championId2", $masteryList[1]->championId);
-    $sth->bindValue(":championName2", $champion2->key);
+    $sth->bindValue(":championId2", $champion2->championStaticData->id);
+    $sth->bindValue(":championName2", $champion2->championStaticData->key);
     $sth->bindValue(":championPoints2", $masteryList[1]->championPoints);
-    $sth->bindValue(":championId3", $masteryList[2]->championId);
-    $sth->bindValue(":championName3", $champion3->key);
+    $sth->bindValue(":championId3", $champion3->championStaticData->id);
+    $sth->bindValue(":championName3", $champion3->championStaticData->key);
     $sth->bindValue(":championPoints3", $masteryList[2]->championPoints);
     $sth->execute();
   } catch (LeagueWrap\Response\Http404 $e) {

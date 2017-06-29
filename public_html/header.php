@@ -67,6 +67,11 @@
 						</ul>
 					</li>
 				</ul>
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="index.php?sida=search">Search</a>
+					</li>
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<a href="index.php?sida=faq">FAQ</a>

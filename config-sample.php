@@ -1,7 +1,17 @@
 <?php
 
-## API Key frá riot games https://developer.riotgames.com/
-$key = 'xxxx-xxxx-xxxx-xxxx-xxxx';
+// API KEYS frá riot games https://developer.riotgames.com/
+if ($_SERVER['HTTP_HOST'] == 'localhost')
+{
+  // DEVELOPMENT API Key
+  $key = 'xxxx-xxxx-xxxx-xxxx';
+}
+else
+{
+  // PRODUCTION API Key
+  $key = 'xxxx-xxxx-xxxx-xxxx';
+}
+
 
 ## League of legends servers og ranked queues sem að vefsíðan styður í augnablikinu.
 ## Það er hægt að bæta við fleirum, en þá verður að breyta SQL skjalinu (Bæta við tables fyrir aðra servera)
@@ -34,3 +44,4 @@ $opt = [
   PDO::ATTR_EMULATE_PREPARES   => FALSE,
 ];
 $pdo = new PDO($dsn, $user, $pass, $opt);
+?>

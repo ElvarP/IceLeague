@@ -21,6 +21,10 @@
 	height: 4em;
 	text-align: center;
 }
+.response .alert {
+    display: inline-block;
+    margin: 0 auto;
+}
 /* Styles fyrir öll tables */
 .win {
 	color: #2daf7f;

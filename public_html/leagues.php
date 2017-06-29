@@ -5,9 +5,18 @@
 	$queue = $_GET['queue'];
 	if (in_array($server, $supported_league_servers) && (in_array($queue, $supported_ranked_queues))) {
 
-		$showTable = True;
-		echo "<h1 class='text-uppercase'>$server $queue</h1>";
+		if ($queue == "ranked_solo_5x5") {
+			$queue_name = "SOLO QUEUE";
+		}
+		elseif ($queue == "ranked_flex_sr") {
+			$queue_name = "FLEX QUEUE";
+		}
+		elseif ($queue == "ranked_flex_tt") {
+			$queue_name = "TWISTED TREELINE";
+		}
 
+		$showTable = True;
+		echo "<h1 class='text-uppercase'>$server $queue_name</h1>";
 	}
 	else {
 		$showTable = False;

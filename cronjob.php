@@ -1,34 +1,66 @@
 <?php
+echo "<pre>";
+set_time_limit(0); // Ekkert time limit svo það er hægt að uppfæra alla summoners
 require_once 'config.php';
 require_once 'vendor/autoload.php';
-
-set_time_limit(0); // Ekkert time limit svo það er hægt að uppfæra alla summoners
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-$time_start = microtime(true);
-
 use LeagueWrap\Api;
 $api      = new Api($key);
 $championsStaticData = $api->staticData()->getChampions();
 
-$servers = ['eune', 'euw', 'na']; #Servers array til þess að uppfæra allar notendur í öllum serverum
-
-foreach ($servers as $server) {
+foreach ($supported_league_servers as $server) {
 $api->setRegion($server);
 $sth = $pdo->prepare("SELECT id FROM {$server}_summoners");
 $sth->execute();
-$rows = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($rows as $row => $id) {
+$summoners_ids = $sth->fetchAll(PDO::FETCH_ASSOC);
+foreach ($summoners_ids as $the_summoner_id) {
   try {
     #Fá summoner info til þess að setja í databaseið
-    $summoner = $api->summoner()->info($id);
+    $summoner = $api->summoner()->info($the_summoner_id);
     $sth = $pdo->prepare("REPLACE INTO {$server}_summoners (id, summonerName, profileIconId, summonerLevel) VALUES(:id, :summonerName, :profileIconId, :summonerLevel)");
     $sth->bindValue(":id", $summoner->id);
     $sth->bindValue(":summonerName", $summoner->name);
     $sth->bindValue(":profileIconId", $summoner->profileIconId);
     $sth->bindValue(":summonerLevel", $summoner->summonerLevel);
     $sth->execute();
+
+    #telja hversu oft spilari spilar X role - uppfæra databaseið
+    $topGamesPlayed = 0;
+    $jungleGamesPlayed = 0;
+    $midGamesPlayed = 0;
+    $adcGamesPlayed = 0;
+    $supportGamesPlayed = 0;
+    $matchHistory = $api->matchlist()->matchlist($summoner);
+    foreach ($matchHistory as $match) {
+      if ($match->lane == "TOP") {
+        $topGamesPlayed++;
+      }
+      elseif ($match->lane == "JUNGLE") {
+        $jungleGamesPlayed++;
+      }
+      elseif ($match->lane == "MID") {
+        $midGamesPlayed++;
+      }
+      elseif ($match->lane == "BOTTOM") {
+        if ($match->role == "DUO_CARRY") {
+          $adcGamesPlayed++;
+        }
+        elseif ($match->role == "DUO_SUPPORT") {
+          $supportGamesPlayed++;
+        }
+      }
+    }
+    $sth = $pdo->prepare("REPLACE INTO {$server}_roles (id, summonerName, totalGamesPlayed, topGamesPlayed, jungleGamesPlayed, midGamesPlayed, adcGamesPlayed, supportGamesPlayed)
+    VALUES (:id, :summonerName, :totalGamesPlayed, :topGamesPlayed, :jungleGamesPlayed, :midGamesPlayed, :adcGamesPlayed, :supportGamesPlayed)");
+    $sth->execute(array(
+      ':id' => $summoner->id,
+      ':summonerName' => $summoner->name,
+      ':totalGamesPlayed' => $matchHistory->totalGames,
+      ':topGamesPlayed' => $topGamesPlayed,
+      ':jungleGamesPlayed' => $jungleGamesPlayed,
+      ':midGamesPlayed' => $midGamesPlayed,
+      ':adcGamesPlayed' => $adcGamesPlayed,
+      ':supportGamesPlayed' => $supportGamesPlayed,
+    ));
 
     #Fá League info hjá summoner - uppfæra databaseið
     $leagues = $api->league()->league($summoner, true);
@@ -147,7 +179,3 @@ foreach ($rows as $row => $id) {
   }
 }
 }
-#Reikna hversu langan tíma það tók að uppfæra notendur
-$time_end = microtime(true);
-$execution_time = ($time_end - $time_start);
-echo "<br><br>Framkvæmdartími: $execution_time";

@@ -23,6 +23,46 @@ CREATE TABLE `eune_summoners` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `X_roles`
+--
+
+CREATE TABLE `eune_roles` (
+  `id` int(11) NOT NULL,
+  `summonerName` VARCHAR(16) NULL,
+  `totalGamesPlayed` int(11) NULL,
+  `topGamesPlayed` int(11) NULL,
+  `jungleGamesPlayed` int(11) NULL,
+  `midGamesPlayed` int(11) NULL,
+  `adcGamesPlayed` int(11) NULL,
+  `supportGamesPlayed` int(11) NULL,
+  PRIMARY KEY (`id`)
+);
+CREATE TABLE `euw_roles` (
+  `id` int(11) NOT NULL,
+  `summonerName` VARCHAR(16) NULL,
+  `totalGamesPlayed` int(11) NULL,
+  `topGamesPlayed` int(11) NULL,
+  `jungleGamesPlayed` int(11) NULL,
+  `midGamesPlayed` int(11) NULL,
+  `adcGamesPlayed` int(11) NULL,
+  `supportGamesPlayed` int(11) NULL,
+  PRIMARY KEY (`id`)
+);
+CREATE TABLE `na_roles` (
+  `id` int(11) NOT NULL,
+  `summonerName` VARCHAR(16) NULL,
+  `totalGamesPlayed` int(11) NULL,
+  `topGamesPlayed` int(11) NULL,
+  `jungleGamesPlayed` int(11) NULL,
+  `midGamesPlayed` int(11) NULL,
+  `adcGamesPlayed` int(11) NULL,
+  `supportGamesPlayed` int(11) NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `eune_ranked_stats`
 --
 

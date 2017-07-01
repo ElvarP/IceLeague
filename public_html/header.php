@@ -42,6 +42,7 @@
 							<li class="divider"></li>
 							<li><a href="index.php?sida=ranked_stats&server=na">Ranked Stats</a></li>
 							<li><a href="index.php?sida=champion_mastery&server=na">Champion Mastery</a></li>
+							<li><a href="index.php?sida=roles&server=na">Main roles</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -53,6 +54,7 @@
 							<li class="divider"></li>
 							<li><a href="index.php?sida=ranked_stats&server=euw">Ranked Stats</a></li>
 							<li><a href="index.php?sida=champion_mastery&server=euw">Champion Mastery</a></li>
+							<li><a href="index.php?sida=roles&server=euw">Main roles</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -64,6 +66,7 @@
 							<li class="divider"></li>
 							<li><a href="index.php?sida=ranked_stats&server=eune">Ranked Stats</a></li>
 							<li><a href="index.php?sida=champion_mastery&server=eune">Champion Mastery</a></li>
+							<li><a href="index.php?sida=roles&server=eune">Main roles</a></li>
 						</ul>
 					</li>
 				</ul>

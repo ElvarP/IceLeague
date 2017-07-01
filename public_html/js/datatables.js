@@ -23,6 +23,15 @@ $(document).ready(function() {
     "lengthMenu": [10, 15, 25, 50, 100],
     responsive: true,
   });
+  $('.roles').dataTable( {
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.7/i18n/Icelandic.json"
+    },
+    "iDisplayLength": 15,
+    "lengthMenu": [10, 15, 25, 50, 100],
+    "order": [[ 6, "desc" ]],
+    responsive: true,
+  });
   $('.championmastery').dataTable( {
     "language": {
       "url": "//cdn.datatables.net/plug-ins/1.10.7/i18n/Icelandic.json"

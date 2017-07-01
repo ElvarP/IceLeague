@@ -6,7 +6,7 @@ require_once 'header.php';
 
 
 $page = isset($_GET['sida']) ? $_GET['sida'] : null;
-$allowed_pages = array('champion_mastery', 'leagues', 'ranked_stats', 'faq', 'search');
+$allowed_pages = array('champion_mastery', 'leagues', 'ranked_stats', 'roles', 'faq', 'search');
 
 if (!empty($page)) {
 

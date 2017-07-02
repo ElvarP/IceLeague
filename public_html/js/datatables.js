@@ -40,6 +40,14 @@ $(document).ready(function() {
     "lengthMenu": [10, 15, 25, 50, 100],
     responsive: true,
   });
+  $('#table_search').dataTable( {
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.7/i18n/Icelandic.json"
+    },
+    "iDisplayLength": 15,
+    "lengthMenu": [10, 15, 25, 50, 100],
+    responsive: true,
+  });
   //Bæta við Index (númer) við Ranked stats og Champion Mastery tables
   $('.rankedstats').on( 'draw.dt', function () {
     $('tr').each(function (i) {

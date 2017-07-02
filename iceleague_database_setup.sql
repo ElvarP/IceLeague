@@ -29,6 +29,7 @@ CREATE TABLE `eune_summoners` (
 CREATE TABLE `eune_roles` (
   `id` int(11) NOT NULL,
   `summonerName` VARCHAR(16) NULL,
+  `mainRole` VARCHAR(16) NULL,
   `totalGamesPlayed` int(11) NULL,
   `topGamesPlayed` int(11) NULL,
   `jungleGamesPlayed` int(11) NULL,
@@ -40,6 +41,7 @@ CREATE TABLE `eune_roles` (
 CREATE TABLE `euw_roles` (
   `id` int(11) NOT NULL,
   `summonerName` VARCHAR(16) NULL,
+  `mainRole` VARCHAR(16) NULL,
   `totalGamesPlayed` int(11) NULL,
   `topGamesPlayed` int(11) NULL,
   `jungleGamesPlayed` int(11) NULL,
@@ -51,6 +53,7 @@ CREATE TABLE `euw_roles` (
 CREATE TABLE `na_roles` (
   `id` int(11) NOT NULL,
   `summonerName` VARCHAR(16) NULL,
+  `mainRole` VARCHAR(16) NULL,
   `totalGamesPlayed` int(11) NULL,
   `topGamesPlayed` int(11) NULL,
   `jungleGamesPlayed` int(11) NULL,

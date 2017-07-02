@@ -7,6 +7,21 @@
 		margin-top: 10px;
 	}
 }
+.search-label {
+	padding-top: 15px;
+	font-size: 20px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.search-button {
+	margin-top: 20px;
+}
+.lp {
+	color: #5a5a5a;
+}
+#table_search table td {
+	font-weight: bold;
+}
 /* Jumbatron/hero/summoner_input styles */
 #hero {
 	background: url('../images/JinxBackground.jpg') no-repeat center center;
@@ -41,11 +56,11 @@
 .kda_orange {
 	color: #e19205;
 }
-table.dataTable tbody td .progress {
+table tbody td .progress {
 	margin-bottom: 0;
 	height: 16px;
 }
-table.dataTable tbody td .progress .progress-bar {
+table tbody td .progress .progress-bar {
 	font-size: 15px;
 	line-height: 15px;
 }

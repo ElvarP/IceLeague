@@ -15,3 +15,17 @@ frm.submit(function (ev) {
 	});
 	ev.preventDefault();
 });
+$("#search_input").submit(function(e) {
+	e.preventDefault();
+	$.ajax({
+		type: $(this).attr('method'),
+		url: $(this).attr('action'),
+		data: $(this).serialize(),
+		success: function(data)	{
+			$("#search_output").html(data);
+		},
+		error: function(data) {
+			$("#search_output").html(data);
+		}
+	});
+});

@@ -1,6 +1,6 @@
 <div id="hero" class="jumbotron text-center">
 	<h1>
-		IceLeague
+		ICELEAGUE
 		<br>
 		<small>Listi yfir íslenska LoL Spilara</small>
 	</h1>

@@ -31,29 +31,29 @@ foreach ($summoners_ids as $the_summoner_id) {
     $supportGamesPlayed = 0;
     $matchHistory = $api->matchlist()->matchlist($summoner);
     foreach ($matchHistory as $match) {
-      if ($match->lane == "TOP") {
-        $topGamesPlayed++;
-      }
-      elseif ($match->lane == "JUNGLE") {
-        $jungleGamesPlayed++;
-      }
-      elseif ($match->lane == "MID") {
-        $midGamesPlayed++;
-      }
-      elseif ($match->lane == "BOTTOM") {
-        if ($match->role == "DUO_CARRY") {
-          $adcGamesPlayed++;
+      switch ($match->lane) {
+          case "TOP":
+              $topGamesPlayed++;
+              break;
+          case "JUNGLE":
+              $jungleGamesPlayed++;
+              break;
+          case "MID":
+              $midGamesPlayed++;
+              break;
+          case "BOTTOM":
+              $match->role == "DUO_CARRY" ? $adcGamesPlayed++ : $supportGamesPlayed++;
+              break;
         }
-        elseif ($match->role == "DUO_SUPPORT") {
-          $supportGamesPlayed++;
-        }
-      }
     }
-    $sth = $pdo->prepare("REPLACE INTO {$server}_roles (id, summonerName, totalGamesPlayed, topGamesPlayed, jungleGamesPlayed, midGamesPlayed, adcGamesPlayed, supportGamesPlayed)
-    VALUES (:id, :summonerName, :totalGamesPlayed, :topGamesPlayed, :jungleGamesPlayed, :midGamesPlayed, :adcGamesPlayed, :supportGamesPlayed)");
+    $roles = array("top" => $topGamesPlayed, "jungle" => $jungleGamesPlayed, "mid" => $midGamesPlayed, "adc" => $adcGamesPlayed, "support" => $supportGamesPlayed);
+    $mainRole = array_search(max($roles),$roles);
+    $sth = $pdo->prepare("REPLACE INTO {$server}_roles (id, summonerName, mainRole, totalGamesPlayed, topGamesPlayed, jungleGamesPlayed, midGamesPlayed, adcGamesPlayed, supportGamesPlayed)
+    VALUES (:id, :summonerName, :mainRole,:totalGamesPlayed, :topGamesPlayed, :jungleGamesPlayed, :midGamesPlayed, :adcGamesPlayed, :supportGamesPlayed)");
     $sth->execute(array(
       ':id' => $summoner->id,
       ':summonerName' => $summoner->name,
+      ':mainRole' => $mainRole,
       ':totalGamesPlayed' => $matchHistory->totalGames,
       ':topGamesPlayed' => $topGamesPlayed,
       ':jungleGamesPlayed' => $jungleGamesPlayed,

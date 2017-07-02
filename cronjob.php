@@ -24,6 +24,7 @@ foreach ($summoners_ids as $the_summoner_id) {
     $sth->execute();
 
     #telja hversu oft spilari spilar X role - uppfæra databaseið
+    $numberOfMatchesLoopedOver = 0;
     $topGamesPlayed = 0;
     $jungleGamesPlayed = 0;
     $midGamesPlayed = 0;
@@ -31,6 +32,8 @@ foreach ($summoners_ids as $the_summoner_id) {
     $supportGamesPlayed = 0;
     $matchHistory = $api->matchlist()->matchlist($summoner);
     foreach ($matchHistory as $match) {
+      $numberOfMatchesLoopedOver++;
+      if($numberOfMatchesLoopedOver == 20) break;
       switch ($match->lane) {
           case "TOP":
               $topGamesPlayed++;
@@ -46,6 +49,7 @@ foreach ($summoners_ids as $the_summoner_id) {
               break;
         }
     }
+
     $roles = array("top" => $topGamesPlayed, "jungle" => $jungleGamesPlayed, "mid" => $midGamesPlayed, "adc" => $adcGamesPlayed, "support" => $supportGamesPlayed);
     $mainRole = array_search(max($roles),$roles);
     $sth = $pdo->prepare("REPLACE INTO {$server}_roles (id, summonerName, mainRole, totalGamesPlayed, topGamesPlayed, jungleGamesPlayed, midGamesPlayed, adcGamesPlayed, supportGamesPlayed)

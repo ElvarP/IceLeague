@@ -24,21 +24,23 @@
 }
 /* Jumbatron/hero/summoner_input styles */
 #hero {
-	background: url('../images/JinxBackground.jpg') no-repeat center center;
+	background: url('http://na.leagueoflegends.com/sites/default/files/upload/art/bg_champion_lucian_1920x1080.jpg');
 	background-size: cover;
-	background-position: 0% 23%;
+	background-repeat: no-repeat;
+	background-position: center center;
 	color: #fff;
 }
 .navbar {
 	margin-bottom: 0px;
 }
-.response {
-	height: 4em;
-	text-align: center;
+#summonerName_output {
+	height: 3.6em;
+	margin-bottom: 2em;
+	margin-top: -1em;
 }
-.response .alert {
-    display: inline-block;
-    margin: 0 auto;
+#summonerName_output .alert {
+	margin: auto;
+	display: table;
 }
 /* Styles fyrir öll tables */
 .win {

@@ -1,15 +1,15 @@
 <div id="hero" class="jumbotron">
 	<div class="row">
 		<div class="container">
-			<div class="col-sm-12 col-md-5">
-				<h1>
+			<div class="col-sm-12 col-md-6 col-md-offset-3">
+				<h1 class="text-center">
 					ICELEAGUE
 				</h1>
-				<form id="summoner_input" action="summoner_input.php" method="post">
+				<form id="summonerName_input" action="summoner_input.php" method="post">
 					<div class="form-group">
 						<label for="summoner">Summoner Nafn</label>
-						<input maxlength="16" type="text" class="form-control" name="summoner" required placeholder="Álfasteinn">
-						<small id="emailHelp" class="form-text text-muted">Þú verður að endurskíra mastery page í "iceleague"</small>
+						<input maxlength="16" type="text" class="form-control" name="summoner" placeholder="Álfasteinn" required>
+						<small class="form-text text-muted">Þú verður að endurskíra mastery page í "iceleague"</small>
 					</div>
 					<div class="form-group">
 						<label for="server">Server</label>
@@ -21,19 +21,21 @@
 					</div>
 					<div class="form-group">
 						<label for="kennitala">Kennitala</label>
-						<input maxlength="10" type="text" class="form-control" name="kennitala" placeholder="2104982739">
-						<small id="emailHelp" class="form-text text-muted">Ekki hafa áhyggjur, þetta er bara til þess að staðfesta að þú ert Íslendingur</small>
+						<input maxlength="10" type="text" class="form-control" name="kennitala" placeholder="2104982739" required>
+						<small class="form-text text-muted">Ekki hafa áhyggjur, þetta er bara til þess að staðfesta að þú ert Íslendingur</small>
 					</div>
-					<button type="submit" class="btn btn-primary"><span class="loading"></span>Áfram</button>
+					<button type="submit" class="btn btn-primary btn-block"><span class="loading"></span>Áfram</button>
 				</form>
+
+			</div>
+			<div class="col-sm-12 col-md-7">
 			</div>
 		</div>
 	</div>
 </div>
+<div id="summonerName_output"></div>
 
 <div class="container">
-	<div class="response"></div>
-	<hr>
 	<div class="row">
 		<div class="col-sm-4">
 			<span class="glyphicon glyphicon-signal center-block text-center" style="font-size:8em;"></span>

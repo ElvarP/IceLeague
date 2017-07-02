@@ -1,17 +1,18 @@
-//Form input
-var frm = $('#summoner_input');
-frm.submit(function (ev) {
-	$('#summoner_input').find(':submit').attr("disabled", true);
+$("#summonerName_input").submit(function(e) {
+	e.preventDefault();
+
 	$(".loading").addClass("glyphicon glyphicon-refresh spinning");
 	$.ajax({
-		type: frm.attr('method'),
-		url: frm.attr('action'),
-		data: frm.serialize(),
-		success: function (data) {
+		type: $(this).attr('method'),
+		url: $(this).attr('action'),
+		data: $(this).serialize(),
+		success: function(data)	{
+			$("#summonerName_output").html(data);
 			$(".loading").removeClass("glyphicon glyphicon-refresh spinning");
-			$(".response").html(data);
-			$('#summoner_input').find(':submit').removeAttr("disabled");
+		},
+		error: function(data) {
+			$("#summonerName_output").html("<div class='alert alert-danger'>Fyrirgefðu, það kom upp villa. Prufaðu aftur seinna.</div>");
+			$(".loading").removeClass("glyphicon glyphicon-refresh spinning");
 		}
 	});
-	ev.preventDefault();
 });

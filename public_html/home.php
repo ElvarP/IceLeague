@@ -21,7 +21,7 @@
 					</div>
 					<div class="form-group">
 						<label for="kennitala">Kennitala</label>
-						<input maxlength="16" type="text" class="form-control" name="kennitala" placeholder="2104982739">
+						<input maxlength="10" type="text" class="form-control" name="kennitala" placeholder="2104982739">
 						<small id="emailHelp" class="form-text text-muted">Ekki hafa áhyggjur, þetta er bara til þess að staðfesta að þú ert Íslendingur</small>
 					</div>
 					<button type="submit" class="btn btn-primary"><span class="loading"></span>Áfram</button>

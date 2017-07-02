@@ -4,9 +4,14 @@ require_once '../vendor/autoload.php';
 use LeagueWrap\Api;
 $server = $_POST['server'];
 $summonerName = $_POST['summoner'];
+$kennitala = $_POST['kennitala'];
+
 if(preg_match('/ ^[0-9\p{L} ]+$ /', $summonerName))
 {
   echo "<div class='alert alert-danger'>Þessi summoner fannst ekki: <b>$summonerName</b>, vinsamlegast athugaðu hvort þú valdir réttan server</div>", exit;
+}
+if (kennitala($kennitala) == 'Ogild Kennitala') {
+  echo "<div class='alert alert-danger'>Þessi kennitala er ógild", exit;
 }
 $api = new Api($key); // Load up the API
 $api->setRegion($server); //Setja region sem það sem notandinn valdi (na, euw eða {$server})

@@ -26,14 +26,16 @@
 					</div>
 					<button type="submit" class="btn btn-primary btn-block"><span class="loading"></span>Áfram</button>
 				</form>
-
 			</div>
 			<div class="col-sm-12 col-md-7">
 			</div>
 		</div>
 	</div>
 </div>
+
+
 <div id="summonerName_output"></div>
+
 
 <div class="container">
 	<div class="row">

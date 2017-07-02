@@ -4,6 +4,10 @@ require_once '../vendor/autoload.php';
 use LeagueWrap\Api;
 $server = $_POST['server'];
 $summonerName = $_POST['summoner'];
+if(preg_match('/[^a-z_\-0-9]/i', $summonerName))
+{
+  echo "<div class='alert alert-danger'>Þessi summoner fannst ekki: <b>$summonerName</b>, vinsamlegast athugaðu hvort þú valdir réttan server</div>", exit;
+}
 $api = new Api($key); // Load up the API
 $api->setRegion($server); //Setja region sem það sem notandinn valdi (na, euw eða {$server})
 try {

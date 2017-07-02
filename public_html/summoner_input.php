@@ -4,7 +4,7 @@ require_once '../vendor/autoload.php';
 use LeagueWrap\Api;
 $server = $_POST['server'];
 $summonerName = $_POST['summoner'];
-if(preg_match('/[^a-z_\-0-9]/i', $summonerName))
+if(preg_match('/ ^[0-9\p{L} ]+$ /', $summonerName))
 {
   echo "<div class='alert alert-danger'>Þessi summoner fannst ekki: <b>$summonerName</b>, vinsamlegast athugaðu hvort þú valdir réttan server</div>", exit;
 }

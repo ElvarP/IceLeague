@@ -1,29 +1,34 @@
-<div id="hero" class="jumbotron text-center">
-	<h1>
-		ICELEAGUE
-		<br>
-		<small>Íslenskir LoL spilarar</small>
-	</h1>
-
-	<form class="form-inline container" id="summoner_input" action="summoner_input.php" method="post">
-		<div class="input-group">
-			<div class="form-group">
-				<input size="40" maxlength="16" type="text" class="form-control" name="summoner" required placeholder="Summoner Nafn">
-			</div>
-			<div class="form-group">
-				<select class="form-control" required name="server">
-					<option value="">Server</option>
-					<option value="eune">EUNE</option>
-					<option value="euw">EUW</option>
-					<option value="na">NA</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary"><span class="loading"></span>Áfram</button>
+<div id="hero" class="jumbotron">
+	<div class="row">
+		<div class="container">
+			<div class="col-sm-12 col-md-5">
+				<h1>
+					ICELEAGUE
+				</h1>
+				<form id="summoner_input" action="summoner_input.php" method="post">
+					<div class="form-group">
+						<label for="summoner">Summoner Nafn</label>
+						<input maxlength="16" type="text" class="form-control" name="summoner" required placeholder="Álfasteinn">
+						<small id="emailHelp" class="form-text text-muted">Þú verður að endurskíra mastery page í "iceleague"</small>
+					</div>
+					<div class="form-group">
+						<label for="server">Server</label>
+						<select class="form-control" required name="server">
+							<option value="eune">EUNE</option>
+							<option value="euw">EUW</option>
+							<option value="na">NA</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="kennitala">Kennitala</label>
+						<input maxlength="16" type="text" class="form-control" name="kennitala" placeholder="2104982739">
+						<small id="emailHelp" class="form-text text-muted">Ekki hafa áhyggjur, þetta er bara til þess að staðfesta að þú ert Íslendingur</small>
+					</div>
+					<button type="submit" class="btn btn-primary"><span class="loading"></span>Áfram</button>
+				</form>
 			</div>
 		</div>
-	</form>
-	<small>Þú verður að endurskíra eitt mastery page í "iceleague"</small>
+	</div>
 </div>
 
 <div class="container">

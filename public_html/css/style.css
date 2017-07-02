@@ -24,7 +24,7 @@
 }
 /* Jumbatron/hero/summoner_input styles */
 #hero {
-	background: url('http://na.leagueoflegends.com/sites/default/files/upload/art/bg_champion_lucian_1920x1080.jpg');
+	background: url('../images/bg_hero_lucian.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;

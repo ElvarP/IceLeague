@@ -1,6 +1,6 @@
 <div id="hero" class="jumbotron">
+	<div class="container">
 	<div class="row">
-		<div class="container">
 			<div class="col-sm-12 col-md-6 col-md-offset-3">
 				<h1 class="text-center">
 					ICELEAGUE

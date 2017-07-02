@@ -2,7 +2,7 @@
 	<h1>
 		ICELEAGUE
 		<br>
-		<small>Listi yfir íslenska LoL Spilara</small>
+		<small>Íslenskir LoL spilarar</small>
 	</h1>
 
 	<form class="form-inline container" id="summoner_input" action="summoner_input.php" method="post">

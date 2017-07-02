@@ -32,11 +32,11 @@ require_once 'header.php';
         </select>
         <label class="search-label" for="mainRole">Main Role</label>
         <select class="form-control" name="role">
-          <option value="top">TOP</option>
-          <option value="jungle">JUNGLE</option>
-          <option value="mid">MID</option>
-          <option value="adc">ADC</option>
-          <option value="support">SUPPORT</option>
+          <option value="top">Top</option>
+          <option value="jungle">Jungle</option>
+          <option value="mid">Mid</option>
+          <option value="adc">Adc</option>
+          <option value="support">Support</option>
         </select>
         <input type="submit" value="Submit" class="btn btn-primary search-button">
       </div>

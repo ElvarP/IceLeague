@@ -72,7 +72,7 @@
 				</ul>
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="index.php?sida=search">SEARCH</a>
+						<a href="index.php?sida=search&server=eune&league=DIAMOND&queue=ranked_solo_5x5&role=adc">SEARCH</a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">

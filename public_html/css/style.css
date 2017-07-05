@@ -33,12 +33,12 @@
 .navbar {
 	margin-bottom: 0px;
 }
-#summonerName_output {
+#summonerForm_output {
 	height: 3.6em;
 	margin-bottom: 2em;
 	margin-top: -1em;
 }
-#summonerName_output .alert {
+#summonerForm_output .alert {
 	margin: auto;
 	display: table;
 }

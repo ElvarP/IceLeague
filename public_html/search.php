@@ -130,3 +130,4 @@ require_once '../vendor/autoload.php';
         </div>
       </div>
     </form>
+</div>

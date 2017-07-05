@@ -5,7 +5,7 @@
 				<h1 class="text-center">
 					ICELEAGUE
 				</h1>
-				<form id="summonerName_input" action="summoner_input.php" method="post">
+				<form id="summonerForm_input" action="summoner_input.php" method="post">
 					<div class="form-group">
 						<label for="summoner">Summoner Nafn</label>
 						<input maxlength="16" type="text" class="form-control" name="summoner" placeholder="Álfasteinn" required>
@@ -24,7 +24,7 @@
 						<input maxlength="10" type="text" class="form-control" name="kennitala" placeholder="2104982739" required>
 						<small class="form-text text-muted">Ekki hafa áhyggjur, þetta er bara til þess að staðfesta að þú ert Íslendingur</small>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block"><span class="loading"></span>Áfram</button>
+					<button type="submit" class="btn btn-primary btn-block"><div id="summonerForm_buttonText">Áfram</div></button>
 				</form>
 			</div>
 			<div class="col-sm-12 col-md-7">
@@ -34,7 +34,7 @@
 </div>
 
 
-<div id="summonerName_output"></div>
+<div id="summonerForm_output"></div>
 
 
 <div class="container">

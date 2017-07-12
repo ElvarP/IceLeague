@@ -5,7 +5,7 @@
 				<h1 class="text-center">
 					ICELEAGUE
 				</h1>
-				<form id="summonerForm_input" action="summoner_input.php" method="post">
+				<form id="summonerForm_input" action="../summonerForm.php" method="post">
 					<div class="form-group">
 						<label for="summoner">Summoner Nafn</label>
 						<input maxlength="16" type="text" class="form-control" name="summoner" placeholder="Álfasteinn" required>

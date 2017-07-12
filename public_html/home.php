@@ -9,7 +9,7 @@
 					<div class="form-group">
 						<label for="summoner">Summoner Nafn</label>
 						<input maxlength="16" type="text" class="form-control" name="summoner" placeholder="Álfasteinn" required>
-						<small class="form-text text-muted">Þú verður að endurskíra mastery page í "iceleague"</small>
+						<small class="form-text text-muted">Þú verður að endurskíra mastery page / rune page í "iceleague"</small>
 					</div>
 					<div class="form-group">
 						<label for="server">Server</label>

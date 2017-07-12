@@ -47,7 +47,7 @@ foreach ($masteryPages as $masteryPage) {
   }
 }
 foreach ($runePages as $runePage) {
-  $runePageName = strtolower($masteryPage->name); #Lágstafa nafnið á mastery page-inu svo það breyti ekki máli ef notandinn notar Lágstafi/Hástafi
+  $runePageName = strtolower($runePage->name); #Lágstafa nafnið á mastery page-inu svo það breyti ekki máli ef notandinn notar Lágstafi/Hástafi
   if ($runePageName == "iceleague") {
     $iceleaguePageFound = True;
   }

@@ -1,6 +1,7 @@
 <?php
-require_once '../config.php';
-require_once '../vendor/autoload.php';
+require_once 'config.php';
+require_once 'kennitala_function.php';
+require_once 'vendor/autoload.php';
 use LeagueWrap\Api;
 $server = $_POST['server'];
 $summonerName = $_POST['summoner'];
@@ -31,23 +32,30 @@ try {
 }
 try {
   $masteryPages = $api->summoner()->masteryPages($summoner->id);
+  $runePages = $api->summoner()->runePages($summoner->id);
 } catch (LeagueWrap\Response\Http404 $e) {
-  echo "<div class='alert alert-danger'>Það fannst ekki mastery pages fyrir þennan summoner: <b>$summoner->name</b></div>", exit;
+  echo "<div class='alert alert-danger'>Það fannst ekki mastery/rune pages fyrir þennan summoner: <b>$summoner->name</b></div>", exit;
 } catch (LeagueWrap\Response\UnderlyingServiceRateLimitReached $e) {
   echo "<div class='alert alert-danger'>Fyrirgefðu! það eru of margir að nota síðuna í augnablikinu, vinsamlegast prufaðu aftur seinna</div>", exit;
 }
 #Tjekka hvort notandinn er með mastery Page sem er == "iceleague" til þess að staðfesta að notandinn á summoner aðganginn
-$masteryPageFound = False;
+$iceleaguePageFound = False;
 foreach ($masteryPages as $masteryPage) {
   $masteryPageName = strtolower($masteryPage->name); #Lágstafa nafnið á mastery page-inu svo það breyti ekki máli ef notandinn notar Lágstafi/Hástafi
   if ($masteryPageName == "iceleague") {
-    $masteryPageFound = True;
+    $iceleaguePageFound = True;
   }
 }
-if ($masteryPageFound == False) {
-  echo "<div class='alert alert-danger'>Þú verður að endurskíra eitt mastery page í 'iceleague' (án gæsalappa)</div>", exit;
+foreach ($runePages as $runePage) {
+  $runePageName = strtolower($masteryPage->name); #Lágstafa nafnið á mastery page-inu svo það breyti ekki máli ef notandinn notar Lágstafi/Hástafi
+  if ($runePageName == "iceleague") {
+    $iceleaguePageFound = True;
+  }
 }
-elseif ($masteryPageFound == True) {
+if ($iceleaguePageFound == False) {
+  echo "<div class='alert alert-danger'>Þú verður að endurskíra Mastery page/ Rune page í 'iceleague' (án gæsalappa)</div>", exit;
+}
+elseif ($iceleaguePageFound == True) {
   #setja notandann í gagnagrunninum
   $sth = $pdo->prepare("REPLACE INTO {$server}_summoners (id, summonerName, profileIconId, summonerLevel) VALUES(:id, :name, :profileIconId, :summonerLevel)");
   $sth->bindValue(":id", $summoner->id);

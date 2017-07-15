@@ -1,5 +1,6 @@
 {
     "require": {
-        "league-php/leaguewrap": "^0.7.2"
+        "league-php/leaguewrap": "^0.7.2",
+        "dolejska-daniel/riot-api": "^0.7.0"
     }
 }

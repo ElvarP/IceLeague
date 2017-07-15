@@ -4,9 +4,119 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9adfdc4240b19b5e3bc4864e57aa2a62",
-    "content-hash": "cb7be4a748e298ad9fa217c298a220ce",
+    "hash": "c110f214a8f2f523ba550b1ce5d9d351",
+    "content-hash": "807016874f5036e2f79c8e7fd354a7cd",
     "packages": [
+        {
+            "name": "curl/curl",
+            "version": "1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-mod/curl.git",
+                "reference": "96f5bd47bab8d76f1883c257c6659091987ef662"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-mod/curl/zipball/96f5bd47bab8d76f1883c257c6659091987ef662",
+                "reference": "96f5bd47bab8d76f1883c257c6659091987ef662",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Curl": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hassan Amouhzi",
+                    "email": "hassan@anezi.net",
+                    "homepage": "http://hassan.amouhzi.com"
+                },
+                {
+                    "name": "php-curl-class",
+                    "homepage": "https://github.com/php-curl-class"
+                },
+                {
+                    "name": "user52",
+                    "homepage": "https://github.com/user52"
+                }
+            ],
+            "description": "cURL class for PHP",
+            "homepage": "https://github.com/php-mod/curl",
+            "keywords": [
+                "curl",
+                "dot"
+            ],
+            "time": "2017-04-03 15:04:35"
+        },
+        {
+            "name": "dolejska-daniel/riot-api",
+            "version": "v0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dolejska-daniel/riot-api.git",
+                "reference": "b93f01f40e954166887867abed8675b10aaafd31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dolejska-daniel/riot-api/zipball/b93f01f40e954166887867abed8675b10aaafd31",
+                "reference": "b93f01f40e954166887867abed8675b10aaafd31",
+                "shasum": ""
+            },
+            "require": {
+                "curl/curl": "^1.6.0",
+                "php": "^7.0.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "v0.4.4",
+                "phpunit/phpunit": "6.2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/DataDragonAPI/Utils"
+                ],
+                "psr-4": {
+                    "RiotAPI\\": "src/RiotAPI",
+                    "DataDragonAPI\\": "src/DataDragonAPI"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Dolejška",
+                    "email": "dolejskad@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Riot League of Legends & DataDragon API wrapper for PHP7",
+            "homepage": "https://github.com/dolejska-daniel/riot-api",
+            "keywords": [
+                "PHP7",
+                "Riot",
+                "api",
+                "data dragon",
+                "league of legends",
+                "wrapper"
+            ],
+            "time": "2017-06-30 09:38:03"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "6.1.1",
